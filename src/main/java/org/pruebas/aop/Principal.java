@@ -12,7 +12,7 @@ public class Principal {
 	public static void main(String[] args) {
 		ApplicationContext appContext = new AnnotationConfigApplicationContext(Configuracion.class);
 
-
+		System.out.println("Es otro texto diferente");
 
 		IServicio servicio = appContext.getBean("servicioPrueba", IServicio.class);
 		servicio.ejecutarOperacion("uno", "dos");
