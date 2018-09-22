@@ -20,6 +20,7 @@ public class Principal {
 		
 		IServicio servicio = appContext.getBean("servicioPrueba", IServicio.class);
 		servicio.ejecutarOperacion("uno", "dos");
+		servicio.ejecutarOperacion("TEXTO PARAMETRO 1", "TEXTO PARAMETRO2");
 		
 	}
 
