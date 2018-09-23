@@ -97,6 +97,23 @@ public class IntegracionHL7Aspect {
 		//System.out.println("After invoking ejecutarOperacion() method. Return value="+value);
 		return value;
 	}
+
+
+
+
+	@Around("args(org.pruebas.aop.entity.FiltroBusqueda)")
+	public Object negocioAroundAdviceMejorado(ProceedingJoinPoint proceedingJoinPoint){
+		System.out.println("Validamos parametros!!!!!");
+		Object value = null;
+		Object [] argumentos = null;
+		try {
+			value = proceedingJoinPoint.proceed();
+			argumentos = proceedingJoinPoint.getArgs();
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		return value;
+	}
 	
 //	@After( "negocioAroundAdviceMejorado()")
 //	public void antes(IntegracionHL7 anotacion) {

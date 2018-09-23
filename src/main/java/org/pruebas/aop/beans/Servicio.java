@@ -1,5 +1,6 @@
 package org.pruebas.aop.beans;
 
+import org.pruebas.aop.entity.FiltroBusqueda;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,6 +19,11 @@ public class Servicio implements IServicio {
 	public void ejecutarOperacion(String parametro1, String parametro2) {
 		System.out.println("Ejecutamos la operacion");
 		
+	}
+
+	@Override
+	public void pruebaParametros(FiltroBusqueda filtro) {
+
 	}
 
 }

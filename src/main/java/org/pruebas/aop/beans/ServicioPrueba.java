@@ -2,6 +2,7 @@ package org.pruebas.aop.beans;
 
 import org.pruebas.aop.annot.IntegracionHL7;
 import org.pruebas.aop.annot.ValidacionCampoUno;
+import org.pruebas.aop.entity.FiltroBusqueda;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,7 +20,12 @@ public class ServicioPrueba implements IServicio {
 		System.out.println("Dentro del metodo ejecutarOperacion");
 		parametrosConcatenados = parametro1 + "-" + parametro2;
  	}
-	
+
+	@Override
+	public void pruebaParametros(FiltroBusqueda filtro) {
+
+	}
+
 	public String generoMensaje() {
 		System.out.println("Estoy generando el mensaje" + parametrosConcatenados);
 		return "mensaje";

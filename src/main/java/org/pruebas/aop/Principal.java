@@ -4,6 +4,7 @@ package org.pruebas.aop;
 import org.pruebas.aop.beans.IServicio;
 import org.pruebas.aop.beans.Servicio;
 import org.pruebas.aop.config.Configuracion;
+import org.pruebas.aop.entity.FiltroBusqueda;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -17,7 +18,8 @@ public class Principal {
 		IServicio servicio = appContext.getBean("servicioPrueba", IServicio.class);
 		servicio.ejecutarOperacion("uno", "dos");
 		servicio.ejecutarOperacion("TEXTO PARAMETRO 1", "TEXTO PARAMETRO2");
-		
+		servicio.pruebaParametros(new FiltroBusqueda("1", "3"));
+
 	}
 
 }
